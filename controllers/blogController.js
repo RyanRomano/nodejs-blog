@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-mongoose.set('debug', true);
+// mongoose.set('debug', true);
 
 //Connect to DB
 mongoose.connect("mongodb://test:test@ds125555.mlab.com:25555/articles");
