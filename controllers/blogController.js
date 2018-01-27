@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 // mongoose.set('debug', true);
 
 //Connect to DB
-// mongoose.connect("mongodb://test:test@ds125555.mlab.com:25555/articles");
-mongoose.connect("mongodb://heroku_qkh2zs8d:dr4sgongjrk19gmhsepufsipqu@ds117148.mlab.com:17148/heroku_qkh2zs8d");
+mongoose.connect("mongodb://test:test@ds125555.mlab.com:25555/articles");
 const articlesSchema = new mongoose.Schema({
     author: String,
     title: String,
