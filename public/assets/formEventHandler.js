@@ -14,7 +14,7 @@ $(document).ready(function(){
           data: article,
           success: function(data){
             location.reload();
-            console.log("success");
+            console.log("Success!");
           }
         });
         return false;
@@ -31,5 +31,4 @@ $(document).ready(function(){
           }
         });
     });
-  
-  });
+});

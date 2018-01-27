@@ -2,8 +2,8 @@
 <head>
     <title>Blog</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/assets/blog-list.js"></script>
-    <!-- <link href="/assets/styles.css" rel="stylesheet" type="text/css" /> -->
+    <script src="/assets/formEventHandler.js"></script>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div id="blog-container">
@@ -11,19 +11,26 @@
             <form>
                 <input id="author-field" type="text" name="author" placeholder="Author" required/>
                 <input id="title-field" type="text" name="title" placeholder="Title" required/>
-                <input id="body-field" type="text" name="body" placeholder="Body" required/>
+                <!-- <input id="body-field" type="text" name="body" placeholder="Body" required/> -->
+                <textarea id="body-field" placeholder="Body goes here..."></textarea>
+
                 <button type="submit">Add article</button>
             </form>
         </div>
-        <ul>
-            <% for(var i=0; i < articles.length; i++){ %>
-                <li>
-                    <p><%= articles[i].author %></p>
-                    <p id="title"><%= articles[i].title %></p>
-                    <p><%= articles[i].body %></p>
-                </li>
-            <% } %>
-        </ul>
+
+        <div id="article-container">
+            <h2>A List of Articles</h2>
+            <ul>
+                <% for(var i=0; i < articles.length; i++){ %>
+                    <li>
+                        <p><%= articles[i].author %></p>
+                        <p id="title"><%= articles[i].title %></p>
+                        <p><%= articles[i].body %></p>
+                        <hr/>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
