@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Blog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/blog-list.js"></script>
+    <!-- <link href="/assets/styles.css" rel="stylesheet" type="text/css" /> -->
+</head>
+<body>
+    <div id="blog-container">
+        <div id="submit-container">
+            <form>
+                <input id="author-field" type="text" name="author" placeholder="Author" required/>
+                <input id="title-field" type="text" name="title" placeholder="Title" required/>
+                <input id="body-field" type="text" name="body" placeholder="Body" required/>
+                <button type="submit">Add article</button>
+            </form>
+        </div>
+        <ul>
+            <% for(var i=0; i < articles.length; i++){ %>
+                <li>
+                    <p><%= articles[i].author %></p>
+                    <p id="title"><%= articles[i].title %></p>
+                    <p><%= articles[i].body %></p>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
