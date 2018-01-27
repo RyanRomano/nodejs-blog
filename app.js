@@ -3,14 +3,13 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const blogController = require('./controllers/blogController');
 const expressSanitizeEscape = require('express-sanitize-escape');
-
-var app = express();
+const app = express();
 
 //Set Template Engine EJS
 app.set('view engine', 'ejs');
 
 //Set Static Files
-app.use(express.static('./public'));
+app.use(express.static('public'));
 app.use(expressSanitizeEscape.middleware())
 //Fire Controller
 blogController(app);

@@ -1,6 +1,5 @@
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// mongoose.set('debug', true);
 
 //Connect to DB
 mongoose.connect("mongodb://test:test@ds125555.mlab.com:25555/articles");
@@ -16,6 +15,10 @@ const urlencodedParser = bodyParser.urlencoded({extended:false});
 
 module.exports = function(app){
     //render the view
+    app.get('/', function(req, res){
+        res.send("Hello world");
+    });
+
     app.get('/blog', function(req, res){
         //get data from db and send to view
         Article.find({}, function(err, data){
@@ -23,6 +26,12 @@ module.exports = function(app){
             res.render('blog', {articles: data});
         });
     });
+
+    app.get('/edit/:title', function(req, res){
+        Article.find({title:req.params.title.replace(/\-/g, " ")}, function(err, data){
+            res.render('edit', {article: data});
+        });
+    })
 
     //add a blog article
     app.post('/blog', urlencodedParser, function(req, res){
