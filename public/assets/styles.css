@@ -2,6 +2,7 @@ body {
     margin:0;
     padding:0;
 }
+
 #blog-container {
     display:flex;
     flex-direction: row;
@@ -14,19 +15,40 @@ body {
     width: 40%;
     background: lightskyblue;
     padding: 1em 0;
-    border-radius: 5px;
     position: fixed;
     height:100%;
     margin: 0;
 }
 
-#submit-container form {
+#editBody{ 
+    background: lightskyblue;
+}
+
+#edit-section-container {
+    width: 50%;
+    margin: 1em auto;
+    background: lightskyblue;
+}
+
+h3 {
+    margin: 0 0 0 1em;
+}
+
+h3, h4 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 { 
+    margin: 0;
+}
+
+form {
     display: flex;
     flex-direction: column;
     margin: 1em 1em;
 }
 
-#submit-container input {
+input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -36,7 +58,7 @@ body {
     box-sizing: border-box;
 }
 
-#submit-container textarea {
+textarea {
     margin: .5em 0;
     resize: none;
     display: inline-block;
@@ -47,7 +69,7 @@ body {
     padding: 12px 20px;
 }
 
-#submit-container button {
+button {
     margin: 1em auto 0 auto;
     width: 100%;
     background-color: #4CAF50;
@@ -57,6 +79,10 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+#deleteButton {
+    background:#cc3300;
 }
 
 #article-container {
@@ -72,7 +98,6 @@ body {
     width: 80%;
     margin: 0 auto 1em auto;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 #article-container ul {
@@ -88,6 +113,11 @@ body {
     margin: 0 auto 1em auto;
 }
 
+#article-container li button {
+    width: 20%;
+    background: #ffcc00;
+}
+
 #article-container p {
     /* background: lightseagreen; */
     color: black;
@@ -97,3 +127,7 @@ body {
     overflow-wrap: break-word;
 }
 
+label {
+    display:inline-block;
+    margin-bottom: 2em;
+}

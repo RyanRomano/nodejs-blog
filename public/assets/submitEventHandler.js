@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
     $('form').on('submit', function(){
   
         let author = $('#author-field');
@@ -21,14 +22,7 @@ $(document).ready(function(){
     });
   
     $('li').on('click', function(){
-        var urlTitle = $(this).find(':nth-child(2)').text().replace(/ /g, '-');
-        console.log(urlTitle);
-        $.ajax({
-          type: 'DELETE',
-          url: '/blog/' + urlTitle,
-          success: function(data){
-            location.reload();
-          }
-        });
+        var urlTitle = '/edit/' + $(this).find(':nth-child(1)').text().replace(/ /g, '-');
+        window.location = urlTitle;
     });
 });

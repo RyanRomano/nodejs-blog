@@ -1,22 +1,22 @@
 <html>
-<head>
-    <title>Edit</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/assets/formEventHandler.js"></script>
-    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <div id="blog-container">
-        <div id="submit-container">
-            <h3>Edit page</h3>
-            <form>
-                <input id="author-field-edit" type="text" name="author" placeholder="Author" value=<%= article.author %> required/>
-                <input id="title-field-edit" type="text" name="title" placeholder="Title" value=<%= article.title %> required/>
-                <textarea id="body-field-edit" placeholder="Body goes here..."><%= article.body %></textarea>
-
-                <button type="submit">Save article</button>
-            </form>
+    <head>
+        <title>Edit</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/assets/editEventHandler.js"></script>
+        <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body id="editBody">
+        <div id="edit-section-container">
+            <div id="edit-container">
+                <h3>Edit article</h3>
+                <form>
+                    <input id="title-field-edit" type="text" name="title" value="<%= article[0].title %>"/>
+                    <input id="author-field-edit" type="text" value="<%= article[0].author %>"/>
+                    <textarea id="body-field-edit"><%= article[0].body %></textarea>
+                    <button type="button" id="saveButton">Save article</button>
+                    <button type="button" id="deleteButton">Delete article</button>
+                </form>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

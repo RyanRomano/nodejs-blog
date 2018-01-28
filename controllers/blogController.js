@@ -15,6 +15,7 @@ const urlencodedParser = bodyParser.urlencoded({extended:false});
 
 module.exports = function(app){
     //render the view
+    //say hello
     app.get('/', function(req, res){
         res.send("Hello world");
     });
@@ -31,7 +32,7 @@ module.exports = function(app){
         Article.find({title:req.params.title.replace(/\-/g, " ")}, function(err, data){
             res.render('edit', {article: data});
         });
-    })
+    });
 
     //add a blog article
     app.post('/blog', urlencodedParser, function(req, res){
