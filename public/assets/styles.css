@@ -94,7 +94,7 @@ button {
     overflow-y: scroll;
 }
 
-#article-container h2 {
+#article-container h2, #topUnderline {
     width: 80%;
     margin: 0 auto 1em auto;
     font-family: Arial, Helvetica, sans-serif;
